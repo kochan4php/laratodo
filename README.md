@@ -18,5 +18,11 @@ composer install
 ```
 
 ```
-php artisan serve #or php artisan serve --port=3000
+php artisan serve
+```
+
+or
+
+```
+php artisan serve --port=3000
 ```
