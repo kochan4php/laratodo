@@ -14,7 +14,9 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //
+        return view('todos.index', [
+            'title' => 'Home'
+        ]);
     }
 
     /**
@@ -34,17 +36,6 @@ class TodoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Todo  $todo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Todo $todo)
     {
         //
     }
