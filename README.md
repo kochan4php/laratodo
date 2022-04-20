@@ -13,19 +13,19 @@ Laratodo is a simple todolist app, with little features. Free to use and you can
 
 # Setup Project
 
-## Clone the repository
+### Clone the repository
 
 ```
 git clone https://github.com/aphrodeosubarno/laratodo.git
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```
 composer install
 ```
 
-## Run Server
+### Run Server
 
 ```
 php artisan serve
