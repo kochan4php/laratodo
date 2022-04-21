@@ -3,7 +3,7 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2 class="text-center">What's plan today? 👀</h2>
+            <h2 class="text-center">What's plan today?</h2>
         </div>
     </div>
 
