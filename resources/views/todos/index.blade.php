@@ -14,13 +14,13 @@
                     <form action="/" method="POST">
                         @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control input-task border-2 border-warning"
+                            <input type="text" class="form-control input-task border-1 border-warning"
                                 placeholder="Add Task..." name="task">
                             <button class="btn btn-warning" type="submit" name="submit">Add Task</button>
                         </div>
                     </form>
                 </div>
-                <ul class="list-group list-group-flush mt-4 rounded border border-warning border-2">
+                <ul class="list-group list-group-flush mt-4 rounded border border-warning border-1">
                     @foreach ($tasks as $todo)
                         <li class="list-group-item">
                             {{ $todo->task }}
