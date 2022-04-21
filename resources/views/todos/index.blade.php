@@ -2,8 +2,12 @@
 
 @section('container')
     <div class="row">
-        <div class="col">
-            <h1>Halaman {{ $title }}</h1>
+        <div class="col-md-8">
+            <h2>What's plan today?</h2>
+        </div>
+
+        <div class="col-md-8">
+
         </div>
     </div>
 @endsection

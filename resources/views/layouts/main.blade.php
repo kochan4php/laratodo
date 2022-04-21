@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
     <style>
+        body {
+            /* min-height: 1000px; */
+            background-color: rgba(10, 12, 15);
+            color: #fff;
+        }
+
+        .main-container {
+            margin-top: 5.1rem !important;
+        }
+
         * {
             box-sizing: border-box;
             font-family: "Lexend Deca", Arial, Helvetica, sans-serif !important;
@@ -50,13 +60,21 @@
             box-shadow: none;
         }
 
+        nav {
+            background-color: rgba(10, 12, 15, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8.6px);
+            -webkit-backdrop-filter: blur(8.6px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
     </style>
     <title>Laratodo | {{ $title }}</title>
 </head>
 
 <body>
     @include('todos.partials.navbar')
-    <div class="container my-3">
+    <div class="container main-container mb-5">
         @yield('container')
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
