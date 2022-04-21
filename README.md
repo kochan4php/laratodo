@@ -9,7 +9,7 @@
 
 # Laratodo
 
-Laratodo is a simple todolist app, with little features. Free to use and you can add your task today. Made with love for web artisans
+Laratodo is a simple todolist app, with some features. Free to use and you can add your task today. Made with love for web artisans
 
 # Setup Project
 
