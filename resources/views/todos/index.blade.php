@@ -12,16 +12,20 @@
             <div class="card">
                 <div class="card-body p-0">
                     <form action="/" method="POST">
+                        @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Add Task..." name="task">
-                            <button class="btn btn-success" type="submit" name="submit">Add Task</button>
+                            <input type="text" class="form-control input-task border-2 border-warning"
+                                placeholder="Add Task..." name="task">
+                            <button class="btn btn-warning" type="submit" name="submit">Add Task</button>
                         </div>
                     </form>
                 </div>
-                <ul class="list-group list-group-flush mt-3 rounded">
-                    <li class="list-group-item">1 .An item</li>
-                    <li class="list-group-item">2. A second item</li>
-                    <li class="list-group-item">3. A third item</li>
+                <ul class="list-group list-group-flush mt-4 rounded border border-warning border-2">
+                    @foreach ($tasks as $todo)
+                        <li class="list-group-item">
+                            {{ $todo->task }}
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

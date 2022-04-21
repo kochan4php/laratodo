@@ -15,7 +15,8 @@ class TodoController extends Controller
     public function index()
     {
         return view('todos.index', [
-            'title' => 'Home'
+            'title' => 'Home',
+            'tasks' => Todo::with('user')->get()
         ]);
     }
 
