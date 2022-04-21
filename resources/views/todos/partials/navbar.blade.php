@@ -9,15 +9,15 @@
             <div class="collapse navbar-collapse justify-content-end navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">All Tasks</a>
-                    <a class="nav-link" href="/completed">Completed Tasks</a>
-                    <a class="nav-link" href="/uncompleted">Uncompleted Tasks</a>
+                    <a class="nav-link text-white" href="/completed">Completed Tasks</a>
+                    <a class="nav-link text-white" href="/uncompleted">Uncompleted Tasks</a>
                 </div>
             </div>
             <div class="collapse navbar-collapse navbarNavAltMarkup justify-content-end my-2" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <p class="nav-link dropdown-toggle active d-inline" id="navbarDarkDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <p class="nav-link auth-user dropdown-toggle active d-inline" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->name }}
                         </p>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">

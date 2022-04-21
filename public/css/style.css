@@ -3,6 +3,18 @@ body {
     color: #fff;
 }
 
+.active {
+    color: rgb(20, 184, 166) !important;
+}
+
+.nav-link:hover {
+    color: rgb(20, 184, 166) !important;
+}
+
+.auth-user {
+    color: #fff !important;
+}
+
 .navbar .navbar-toggler {
     border: none;
     outline: none;
