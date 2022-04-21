@@ -74,14 +74,14 @@
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">All Tasks</a>
-                <a class="nav-link" href="/completed">Completed Tasks</a>
-                <a class="nav-link" href="/uncompleted">Uncompleted Tasks</a>
-            </div>
-        </div>
         @auth
+            <div class="collapse navbar-collapse justify-content-end navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">All Tasks</a>
+                    <a class="nav-link" href="/completed">Completed Tasks</a>
+                    <a class="nav-link" href="/uncompleted">Uncompleted Tasks</a>
+                </div>
+            </div>
             <div class="collapse navbar-collapse navbarNavAltMarkup justify-content-end" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">

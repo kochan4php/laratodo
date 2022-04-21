@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -31,7 +30,7 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $validated_data = $request->validate([
-            'task' => ['required']
+            'task' => ['required', 'min:3']
         ]);
 
         $validated_data['user_id'] = auth()->user()->id;

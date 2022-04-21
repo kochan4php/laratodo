@@ -16,14 +16,14 @@
                         <div class="input-group">
                             <input type="text"
                                 class="form-control input-task border-1 border-warning @error('task') is-invalid border-danger @enderror"
-                                placeholder="Add Task..." name="task">
+                                placeholder="Add Task..." value="{{ old('task') }}" name="task" autofocus>
                             <button class="btn btn-warning" type="submit" name="submit">Add Task</button>
+                            @error('task')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        @error('task')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
                     </form>
                 </div>
                 <ul class="list-group list-group-flush mt-4 rounded border border-warning border-1">
