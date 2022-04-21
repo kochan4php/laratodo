@@ -85,10 +85,10 @@
             <div class="collapse navbar-collapse navbarNavAltMarkup justify-content-end" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        <p class="nav-link dropdown-toggle active d-inline" id="navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->name }}
-                        </a>
+                        </p>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li>
                                 <a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">My Profile</a>
