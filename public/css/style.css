@@ -1,0 +1,42 @@
+body {
+    /* min-height: 1000px; */
+    background-color: rgba(10, 12, 15);
+    color: #fff;
+}
+
+.main-container {
+    margin-top: 5.1rem !important;
+}
+
+.jumbotron {
+    background-color: #ddd;
+    padding: 3rem;
+}
+
+.navbar .navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus,
+.btn:focus,
+.btn:active,
+.btn-close:focus,
+.btn-close:active,
+.form-control:active,
+.form-control:focus,
+.form-check-input:active,
+.form-check-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+nav {
+    background-color: rgba(10, 12, 15, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.6px);
+    -webkit-backdrop-filter: blur(8.6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

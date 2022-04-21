@@ -3,7 +3,7 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col md-6">
-            <h1 class="text-center mb-4">Please Register</h1>
+            <h2 class="text-center mb-4">Please Register</h2>
         </div>
     </div>
 
