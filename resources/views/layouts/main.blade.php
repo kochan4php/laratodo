@@ -24,7 +24,7 @@
 
     <style>
         * {
-            box-sizing: border-box;
+            box-sizing: border-box !important;
             font-family: "Lexend Deca", Arial, Helvetica, sans-serif !important;
         }
 

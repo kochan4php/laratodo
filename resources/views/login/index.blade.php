@@ -47,7 +47,7 @@
                     <input type="checkbox" class="form-check-input border-secondary" id="remember-me" name="remember-me">
                     <label class="form-check-label" for="remember-me">Remember Me</label>
                 </div>
-                <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
+                <button type="submit" class="btn w-100 my-3">Login</button>
             </form>
 
             <p class="fs-5 text-center">Don't have account? <a href="/register">Register!</a></p>

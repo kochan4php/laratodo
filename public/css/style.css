@@ -1,12 +1,16 @@
 body {
-    /* min-height: 1000px; */
-    background-color: rgba(10, 12, 15);
+    background-color: rgb(15, 23, 42);
     color: #fff;
 }
 
 .navbar .navbar-toggler {
     border: none;
     outline: none;
+}
+
+.navbar .navbar-brand {
+    color: rgb(20, 184, 166) !important;
+    font-weight: bold;
 }
 
 .navbar-toggler:focus,
@@ -25,32 +29,46 @@ body {
 }
 
 nav {
-    background-color: rgba(10, 12, 15, 0.4);
+    background-color: rgba(15, 23, 42, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.6px);
-    -webkit-backdrop-filter: blur(8.6px);
-    -moz-backdrop-filter: blur(8.6px) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    -moz-backdrop-filter: blur(8px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card {
-    background-color: rgba(10, 12, 15) !important;
+    background-color: rgba(15, 23, 42) !important;
 }
 
 .main-container {
-    margin-top: 5.2rem !important;
+    margin-top: 5.3rem !important;
 }
 
-.input-task {
-    background-color: rgba(10, 12, 15) !important;
-}
-
-.input-task:focus {
-    background-color: rgba(10, 12, 15) !important;
+.input-task,
+.input-task:focus,
+.list-group {
+    background-color: rgba(15, 23, 42) !important;
     color: #fff;
+    border-color: rgb(20, 184, 166) !important;
 }
 
 .list-group-item {
-    background-color: rgba(10, 12, 15) !important;
+    background-color: rgba(15, 23, 42) !important;
     color: #fff;
+}
+
+.btn {
+    background-color: rgb(20, 184, 166) !important;
+    outline-color: rgb(20, 184, 166) !important ;
+    border-color: rgb(20, 184, 166) !important ;
+}
+
+.badge {
+    background-color: rgb(30, 41, 59) !important;
+    color: rgb(203, 213, 225) !important;
+}
+
+a {
+    text-decoration: none !important;
 }

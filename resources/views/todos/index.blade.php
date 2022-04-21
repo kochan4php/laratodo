@@ -3,7 +3,7 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2 class="text-center">What's plan today?</h2>
+            <h2 class="text-center">What's plan today? 👀</h2>
         </div>
     </div>
 
@@ -15,9 +15,9 @@
                         @csrf
                         <div class="input-group">
                             <input type="text"
-                                class="form-control input-task border-1 border-warning @error('task') is-invalid border-danger @enderror"
+                                class="form-control input-task border-2 @error('task') is-invalid border-danger @enderror"
                                 placeholder="Add Task..." value="{{ old('task') }}" name="task" autofocus>
-                            <button class="btn btn-warning" type="submit" name="submit">Add Task</button>
+                            <button class="btn" type="submit" name="submit">Add Task</button>
                             @error('task')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -26,7 +26,7 @@
                         </div>
                     </form>
                 </div>
-                <ul class="list-group list-group-flush mt-4 rounded border border-warning border-1">
+                <ul class="list-group list-group-flush mt-4 rounded border border-2">
                     @if ($tasks->count() > 0)
                         @foreach ($tasks as $todo)
                             <hr class="my-0">

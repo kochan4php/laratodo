@@ -52,7 +52,7 @@
                         </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary w-100 my-3">Register</button>
+                <button type="submit" class="btn w-100 my-3">Register</button>
             </form>
 
             <p class="fs-5 text-center">Already Registered? <a href="/login">Login!</a></p>
