@@ -14,8 +14,28 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-2">
-                        <li class="nav-item">
-                            <a class="text-dark nav-link" href="/">My Tasks</a>
+                        <li class="nav-item dropdown">
+                            <a class="text-dark nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                My Task
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="offcanvasNavbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/">All Tasks</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/completed">Completed Tasks</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/uncompleted">Uncompleted Task</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="text-dark nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
@@ -37,7 +57,6 @@
                                 </li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
             </div>
