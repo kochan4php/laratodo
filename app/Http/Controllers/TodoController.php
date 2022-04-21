@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class TodoController extends Controller
 {
@@ -16,7 +18,7 @@ class TodoController extends Controller
     {
         return view('todos.index', [
             'title' => 'Home',
-            'tasks' => Todo::with('user')->get()
+            'tasks' => Todo::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -28,7 +30,15 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated_data = $request->validate([
+            'task' => ['required']
+        ]);
+
+        $validated_data['user_id'] = auth()->user()->id;
+
+        Todo::create($validated_data);
+
+        return Redirect::to('/', 201);
     }
 
     /**
@@ -60,8 +70,9 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function destroy(Request $request, Todo $todo)
     {
-        //
+        Todo::find($request->task_id)->delete();
+        return Redirect::to('/');
     }
 }
