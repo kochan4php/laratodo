@@ -31,7 +31,7 @@ composer install
 php artisan serve
 ```
 
-If you have an application named Avast Free Antivirus, run this:
+> If you have an application named Avast Free Antivirus, run this:
 
 ```
 php artisan serve --port=3000
