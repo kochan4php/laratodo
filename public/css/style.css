@@ -50,18 +50,17 @@ nav {
 }
 
 .card {
-    background-color: rgba(15, 23, 42) !important;
+    background-color: rgb(15, 23, 42) !important;
 }
 
 .main-container {
     margin-top: 5.3rem !important;
 }
 
-.input-task,
-.input-task:focus,
-.list-group {
-    background-color: rgba(15, 23, 42) !important;
-    color: #fff;
+.form-control,
+.form-control:focus {
+    background-color: rgb(226, 232, 240) !important;
+    color: rgb(15, 23, 42);
     border-color: rgb(20, 184, 166) !important;
 }
 
@@ -83,4 +82,10 @@ nav {
 
 a {
     text-decoration: none !important;
+}
+
+.list-group {
+    background-color: rgb(15, 23, 42) !important;
+    color: rgb(226, 232, 240);
+    border-color: rgb(20, 184, 166) !important;
 }
