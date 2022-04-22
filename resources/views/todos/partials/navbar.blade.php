@@ -8,9 +8,15 @@
         @auth
             <div class="collapse navbar-collapse justify-content-end navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">All Tasks</a>
-                    <a class="nav-link text-white" href="/completed">Completed Tasks</a>
-                    <a class="nav-link text-white" href="/uncompleted">Uncompleted Tasks</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }} text-white" href="/">
+                        All Tasks
+                    </a>
+                    <a class="nav-link {{ Request::is('completed') ? 'active' : '' }} text-white" href="/completed">
+                        Completed Tasks
+                    </a>
+                    <a class="nav-link {{ Request::is('uncompleted') ? 'active' : '' }} text-white" href="/uncompleted">
+                        Uncompleted Tasks
+                    </a>
                 </div>
             </div>
             <div class="collapse navbar-collapse navbarNavAltMarkup justify-content-end my-2" id="navbarNavDarkDropdown">
