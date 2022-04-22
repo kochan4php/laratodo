@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TodoController::class, 'index'])->middleware('auth');
 Route::resource('/tasks', TodoController::class)->except(['show', 'create'])->middleware('auth');
+Route::get('/completed', [TodoController::class, 'completed'])->middleware('auth');
+Route::get('/uncompleted', [TodoController::class, 'uncompleted'])->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'register']);

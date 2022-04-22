@@ -17,7 +17,31 @@ class TodoController extends Controller
     {
         return view('todos.index', [
             'title' => 'Home',
-            'tasks' => Todo::where('user_id', auth()->user()->id)->get()
+            'tasks' => Todo::with('user')
+                ->where('user_id', auth()->user()->id)
+                ->get()
+        ]);
+    }
+
+    public function completed()
+    {
+        return view('todos.completed.index', [
+            'title' => 'Completed Tasks',
+            'tasks' => Todo::with('user')
+                ->where('user_id', auth()->user()->id)
+                ->where('status', 1)
+                ->get()
+        ]);
+    }
+
+    public function uncompleted()
+    {
+        return view('todos.uncompleted.index', [
+            'title' => 'Uncompleted Tasks',
+            'tasks' => Todo::with('user')
+                ->where('user_id', auth()->user()->id)
+                ->where('status', 0)
+                ->get()
         ]);
     }
 
