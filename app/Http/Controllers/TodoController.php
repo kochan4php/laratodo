@@ -19,6 +19,7 @@ class TodoController extends Controller
             'title' => 'Home',
             'tasks' => Todo::with('user')
                 ->where('user_id', auth()->user()->id)
+                ->orderBy('status', 'asc')
                 ->get()
         ]);
     }
@@ -73,7 +74,18 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        //
+        $task = Todo::find($request->task_id);
+        $task->user_id = auth()->user()->id;
+
+        if ($task->status === 0) {
+            $task->status = 1;
+        } else {
+            $task->status = 0;
+        }
+
+        $task->save();
+
+        return Redirect::to('/');
     }
 
     /**

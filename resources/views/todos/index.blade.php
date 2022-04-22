@@ -31,16 +31,34 @@
                         @foreach ($tasks as $todo)
                             <hr class="my-0">
                             <li class="list-group-item my-0 d-flex justify-content-between">
-                                <p class="d-flex my-auto">{{ $todo->task }}</p>
-                                <form action="/tasks/{{ $todo->id }}" method="POST" class="d-inline">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" name="task_id" value="{{ $todo->id }}">
-                                    <button type="submit" class="my-0 badge bg-dark border-0 fs-6"
-                                        onclick="return confirm('Delete Task?')">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </button>
-                                </form>
+                                @if ($todo->status === 0)
+                                    <p class="d-flex my-auto">{{ $todo->task }}</p>
+                                @else
+                                    <s class="d-flex my-auto">{{ $todo->task }}</s>
+                                @endif
+                                <div class="d-inline">
+                                    <form action="/tasks/{{ $todo->id }}" method="POST" class="d-inline">
+                                        @method('PUT')
+                                        @csrf
+                                        <input type="hidden" name="task_id" value="{{ $todo->id }}">
+                                        <button type="submit" class="my-0 badge bg-dark border-0 fs-6">
+                                            @if ($todo->status === 0)
+                                                <i class="bi bi-square-fill"></i>
+                                            @else
+                                                <i class="bi bi-check-square-fill"></i>
+                                            @endif
+                                        </button>
+                                    </form>
+                                    <form action="/tasks/{{ $todo->id }}" method="POST" class="d-inline">
+                                        @method('DELETE')
+                                        @csrf
+                                        <input type="hidden" name="task_id" value="{{ $todo->id }}">
+                                        <button type="submit" class="my-0 badge bg-dark border-0 fs-6"
+                                            onclick="return confirm('Delete Task?')">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </li>
                             <hr class="my-0">
                         @endforeach
