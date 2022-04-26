@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Redirect;
 
 class TodoController extends Controller
@@ -75,7 +76,6 @@ class TodoController extends Controller
     public function update(Request $request, Todo $todo)
     {
         $task = Todo::find($request->task_id);
-        $task->user_id = auth()->user()->id;
 
         if ($task->status === 0) {
             $task->status = 1;
@@ -84,6 +84,8 @@ class TodoController extends Controller
         }
 
         $task->save();
+
+        // Todo::where('updated_at', '<', Carbon::now()->subHours())->delete();
 
         return Redirect::to('/');
     }
