@@ -9,6 +9,8 @@
             <div class="collapse navbar-collapse navbarNavAltMarkup justify-content-end my-2" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
+                        <img src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png"
+                            class="rounded-circle" height="22" alt="Avatar" loading="lazy" />
                         <p class="nav-link auth-user dropdown-toggle active d-inline" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->name }}
