@@ -20,6 +20,9 @@
     {{-- Bootstrap Icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
+    {{-- Avatar --}}
+    @include('avatar_cdn.index')
+
     {{-- My CSS --}}
     <link rel="stylesheet" href="/css/style.css">
 
@@ -48,6 +51,22 @@
                     @method('PATCH')
                     @csrf
 
+                    @php
+                        $is_image = true;
+                    @endphp
+
+                    @if ($user->avatar)
+                        <div class="my-3 d-flex justify-content-center">
+                            <img class="d-block avatar-preview rounded-circle" width="200px" height="200px">
+                        </div>
+                    @else
+                        @if ($is_image)
+                            <div class="my-3 d-flex justify-content-center">
+                                <img class="d-block avatar-preview rounded-circle" width="200px" height="200px"
+                                    src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png">
+                            </div>
+                        @endif
+                    @endif
                     <div class="mb-3">
                         <label for="avatar" class="form-label">Avatar</label>
                         <input class="form-control border border-2" type="file" id="avatar" name="avatar">
@@ -93,6 +112,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script src="/js/user.js"></script>
 </body>
 
 </html>

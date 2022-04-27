@@ -23,6 +23,9 @@
     {{-- Bootstrap Icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
+    {{-- Avatar --}}
+    @include('avatar_cdn.index')
+
     {{-- My CSS --}}
     <link rel="stylesheet" href="/css/style.css">
 
