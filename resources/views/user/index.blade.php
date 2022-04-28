@@ -44,7 +44,7 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form method="POST" action="/" enctype="multipart/form-data">
+                <form method="POST" action="/profile/{{ auth()->user()->slug }}" enctype="multipart/form-data">
                     @method('PATCH')
                     @csrf
 
