@@ -18,12 +18,12 @@
                                 class="form-control input-task border-2 @error('task') is-invalid border-danger @enderror"
                                 placeholder="Add Task..." value="{{ old('task') }}" name="task" autofocus>
                             <button class="btn add-task-btn" type="submit" name="submit">Add Task</button>
-                            @error('task')
-                                <div style="color: rgb(255, 78, 78)">
-                                    {{ $message }}
-                                </div>
-                            @enderror
                         </div>
+                        @error('task')
+                            <p class="text-danger mt-2 mb-1">
+                                {{ $message }}
+                            </p>
+                        @enderror
                     </form>
                 </div>
                 <ul class="list-group list-group-flush mt-4 rounded border border-2">

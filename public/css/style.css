@@ -41,11 +41,11 @@ body {
 }
 
 nav {
-    background-color: rgba(15, 23, 42, 0.3) !important;
+    background-color: rgba(7, 26, 46, 0.37) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    -moz-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    -moz-backdrop-filter: blur(18px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
