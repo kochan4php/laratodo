@@ -3,23 +3,23 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2 class="text-center">What's plan today?</h2>
+            <h2 class="text-center">What's plan today {{ auth()->user()->name }}?</h2>
         </div>
     </div>
 
     <div class="row mt-4 justify-content-center">
         <div class="col-lg-8">
-            <div class="card">
-                <div class="card-body p-0">
+            <div class="card border-0">
+                <div class="card-body border-0 p-0">
                     <form action="/tasks" method="POST">
                         @csrf
                         <div class="input-group">
                             <input type="text"
                                 class="form-control input-task border-2 @error('task') is-invalid border-danger @enderror"
                                 placeholder="Add Task..." value="{{ old('task') }}" name="task" autofocus>
-                            <button class="btn" type="submit" name="submit">Add Task</button>
+                            <button class="btn add-task-btn" type="submit" name="submit">Add Task</button>
                             @error('task')
-                                <div class="invalid-feedback">
+                                <div style="color: rgb(255, 78, 78)">
                                     {{ $message }}
                                 </div>
                             @enderror
@@ -36,8 +36,8 @@
                                 @else
                                     <s class="d-flex my-auto">{{ $todo->task }}</s>
                                 @endif
-                                <div class="d-inline">
-                                    <form action="/tasks/{{ $todo->id }}" method="POST" class="d-inline">
+                                <div class="d-flex action-btn">
+                                    <form action="/tasks/{{ $todo->id }}" method="POST" class="d-inline update-todos">
                                         @method('PUT')
                                         @csrf
                                         <input type="hidden" name="task_id" value="{{ $todo->id }}">

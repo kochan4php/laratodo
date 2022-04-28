@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -24,6 +25,7 @@ class RegisterController extends Controller
         ]);
 
         $validated_data['password'] = Hash::make($validated_data['password']);
+        $validated_data['slug'] = Str::slug($validated_data['username']);
 
         User::create($validated_data);
 

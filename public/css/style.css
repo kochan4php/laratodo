@@ -41,12 +41,12 @@ body {
 }
 
 nav {
-    background-color: rgba(15, 23, 42, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    -moz-backdrop-filter: blur(8px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(15, 23, 42, 0.3) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    -moz-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .card {
@@ -88,4 +88,25 @@ a {
     background-color: rgb(15, 23, 42) !important;
     color: rgb(226, 232, 240);
     border-color: rgb(20, 184, 166) !important;
+}
+
+.add-task-btn {
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+}
+
+@media screen and (min-width: 600px) {
+    .update-todos {
+        margin-right: 0.3rem !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .action-btn {
+        flex-direction: column !important;
+    }
+
+    .update-todos {
+        margin-bottom: 0.3em !important;
+    }
 }

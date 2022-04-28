@@ -56,7 +56,7 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $validated_data = $request->validate([
-            'task' => ['required', 'min:3']
+            'task' => ['required', 'min:3', 'max:150']
         ]);
 
         $validated_data['user_id'] = auth()->user()->id;

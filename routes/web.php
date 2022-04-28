@@ -29,4 +29,4 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'login_authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/profile/{user}', [ProfileController::class, 'index'])->middleware('auth');
+Route::get('/profile/{user:slug}', [ProfileController::class, 'index'])->middleware('auth');

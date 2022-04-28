@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="/">Laratodo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon navbar-dark"></span>
         </button>
         @auth
             <div class="collapse navbar-collapse justify-content-end navbarNavAltMarkup">
@@ -28,7 +28,7 @@
                         </p>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li>
-                                <a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">My Profile</a>
+                                <a class="dropdown-item" href="/profile/{{ auth()->user()->slug }}">My Profile</a>
                             </li>
                             <li>
                                 <form action="/logout" method="POST" class="d-inline">
