@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('navbar')
+    @include('partials.navbar')
+@endsection
+
 @section('container')
     @if (session()->has('success'))
         <div class="row justify-content-center">

@@ -75,6 +75,12 @@ nav {
     border-color: rgb(20, 184, 166) !important ;
 }
 
+.btn:hover {
+    background-color: rgb(16, 148, 132) !important;
+    outline-color: rgb(16, 148, 132) !important ;
+    border-color: rgb(16, 148, 132) !important ;
+}
+
 .badge {
     background-color: rgb(30, 41, 59) !important;
     color: rgb(203, 213, 225) !important;

@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('navbar')
+    @include('partials.navbar')
+@endsection
+
 @section('container')
     <div class="row justify-content-center">
         <div class="col lg-6">
