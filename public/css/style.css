@@ -110,3 +110,9 @@ a {
         margin-bottom: 0.3em !important;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .edit-profile {
+        width: 100%;
+    }
+}

@@ -29,6 +29,10 @@
             font-family: "Lexend Deca", Arial, Helvetica, sans-serif !important;
         }
 
+        .avatar-preview {
+            object-fit: cover;
+        }
+
     </style>
     <title>Laratodo | {{ $title }}</title>
 </head>
@@ -44,59 +48,31 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form method="POST" action="/profile/{{ auth()->user()->slug }}" enctype="multipart/form-data">
-                    @method('PATCH')
-                    @csrf
 
-                    @if ($user->avatar)
-                        <div class="my-3 d-flex justify-content-center">
-                            <img class="d-block avatar-preview rounded-circle" width="200px" height="200px">
-                        </div>
+                <div class="my-3 d-flex justify-content-center">
+                    @if (auth()->user()->avatar)
+                        <img class="d-block avatar-preview rounded-circle" width="200px" height="200px"
+                            src="{{ asset('/storage/' . auth()->user()->avatar) }}">
                     @else
-                        <div class="my-3 d-flex justify-content-center">
-                            <img class="d-block avatar-preview rounded-circle" width="200px" height="200px"
-                                src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png">
-                        </div>
+                        <img class="d-block avatar-preview rounded-circle" width="200px" height="200px"
+                            src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png">
                     @endif
-                    <div class="mb-3">
-                        <label for="avatar" class="form-label">Avatar</label>
-                        <input class="form-control border border-2" type="file" id="avatar" name="avatar">
+                </div>
+                <div class="my-4 d-flex flex-column text-center justify-content-center">
+                    <div>
+                        <p class="fs-5">Name: {{ auth()->user()->name }}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control border border-2 @error('name') is-invalid @enderror"
-                            id="name" name="name" placeholder="fullname" required
-                            value="{{ old('name', auth()->user()->name) }}">
-                        @error('name')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                    <div>
+                        <p class="fs-5">Username: {{ auth()->user()->username }}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control border border-2 @error('username') is-invalid @enderror"
-                            id="username" name="username" placeholder="username" required
-                            value="{{ old('username', auth()->user()->username) }}">
-                        @error('username')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                    <div>
+                        <p class="fs-5">Email: {{ auth()->user()->email }}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control border border-2 @error('email') is-invalid @enderror"
-                            id="email" name="email" placeholder="email address" required
-                            value="{{ old('email', auth()->user()->email) }}">
-                        @error('email')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-                    <button type="submit" class="btn w-100 my-3">Save Account</button>
-                </form>
+                </div>
+                <div class="my-4 d-flex flex-column">
+                    <a href="/profile/edit/{{ auth()->user()->slug }}" class="btn col-md-6 m-auto edit-profile">Edit
+                        Profile</a>
+                </div>
             </div>
         </div>
     </div>

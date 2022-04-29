@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="/profile/{{ auth()->user()->slug }}">My Profile</a>
+        <a class="navbar-brand" href="/profile/{{ auth()->user()->slug }}">{{ $title }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,8 +9,13 @@
             <div class="collapse navbar-collapse navbarNavAltMarkup justify-content-end my-2" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <img src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png"
-                            class="rounded-circle" height="22" alt="Avatar" loading="lazy" />
+                        @if (!auth()->user()->avatar)
+                            <img src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png"
+                                class="rounded-circle" width="22" height="22" alt="Avatar" loading="lazy" />
+                        @else
+                            <img src="{{ asset('/storage/' . auth()->user()->avatar) }}" class="rounded-circle" width="22"
+                                height="22" alt="Avatar" loading="lazy" />
+                        @endif
                         <p class="nav-link auth-user dropdown-toggle active d-inline" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->name }}
