@@ -55,7 +55,8 @@ class ProfileController extends Controller
         }
 
         if (User::find($user->id)->update($validated_data)) {
-            return Redirect::to('/profile/' . User::find($user->id)->slug)->with('success', 'Update Profile Successfully');
+            return Redirect::to('/profile/' . User::find($user->id)->slug)
+                ->with('success', 'Update Profile Successfully');
         }
     }
 }

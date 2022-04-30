@@ -5,6 +5,17 @@
 @endsection
 
 @section('container')
+    @if (session()->has('success'))
+        <div class="row justify-content-center my-3">
+            <div class="col-lg-6 col-md-6">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ session('success') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    @endif
+
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <h2 class="text-center">My Profile</h2>
