@@ -101,4 +101,10 @@ class TodoController extends Controller
         Todo::find($request->task_id)->delete();
         return Redirect::to('/');
     }
+
+    public function delete_completed_todos()
+    {
+        Todo::where('status', 1)->delete();
+        return response()->json(['message' => 'Success deleted completed todos']);
+    }
 }

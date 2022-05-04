@@ -22,6 +22,7 @@ Route::get('/', [TodoController::class, 'index'])->middleware('auth');
 Route::resource('/tasks', TodoController::class)->except(['show', 'create', 'edit'])->middleware('auth');
 Route::get('/completed', [TodoController::class, 'completed'])->middleware('auth');
 Route::get('/uncompleted', [TodoController::class, 'uncompleted'])->middleware('auth');
+Route::get('/delete-completed-todos', [TodoController::class, 'delete_completed_todos']);
 
 // Register Route
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
