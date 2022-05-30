@@ -15,7 +15,7 @@ Laratodo is a simple todolist app, with some features. Free to use and you can a
 
 ```bash
 # clone the repository
-git clone https://github.com/aphrodeosubarno/laratodo.git
+git clone https://github.com/kochan4php/laratodo.git
 
 # go to laratodo directory
 cd laratodo
