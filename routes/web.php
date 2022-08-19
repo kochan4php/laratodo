@@ -18,22 +18,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Todos Route
-Route::get('/', [TodoController::class, 'index'])->middleware('auth');
 Route::resource('/tasks', TodoController::class)->except(['show', 'create', 'edit'])->middleware('auth');
-Route::get('/completed', [TodoController::class, 'completed'])->middleware('auth');
-Route::get('/uncompleted', [TodoController::class, 'uncompleted'])->middleware('auth');
-Route::get('/delete-completed-todos', [TodoController::class, 'delete_completed_todos']);
+Route::controller(TodoController::class)->middleware('auth')->group(function () {
+  Route::get('/', 'index');
+  Route::get('/completed', 'completed');
+  Route::get('/uncompleted', 'uncompleted');
+});
 
 // Register Route
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::controller(RegisterController::class)->group(function () {
+  Route::get('/register', 'index')->middleware('guest');
+  Route::post('/register', 'register');
+});
 
 // Login Route
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'login_authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::controller(LoginController::class)->group(function () {
+  Route::get('/login', 'index')->name('login')->middleware('guest');
+  Route::post('/login', 'login_authenticate');
+  Route::post('/logout', 'logout');
+});
 
 // Profile Route
-Route::get('/profile/{user:slug}', [ProfileController::class, 'index'])->middleware('auth');
-Route::get('/profile/edit/{user:slug}', [ProfileController::class, 'edit_profile'])->middleware('auth');
-Route::patch('/profile/{user:slug}', [ProfileController::class, 'update_profile']);
+Route::controller(ProfileController::class)->middleware('auth')->group(function () {
+  Route::get('/profile/{user:slug}', 'index');
+  Route::get('/profile/edit/{user:slug}', 'edit_profile');
+  Route::patch('/profile/{user:slug}', 'update_profile');
+});

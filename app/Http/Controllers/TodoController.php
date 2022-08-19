@@ -62,8 +62,7 @@ class TodoController extends Controller
         $validated_data['user_id'] = auth()->user()->id;
 
         Todo::create($validated_data);
-
-        return Redirect::to('/', 201);
+        return redirect()->to('/', 201);
     }
 
     /**
@@ -77,17 +76,11 @@ class TodoController extends Controller
     {
         $task = Todo::find($request->task_id);
 
-        if ($task->status === 0) {
-            $task->status = 1;
-        } else {
-            $task->status = 0;
-        }
+        if ($task->status === 0) $task->status = 1;
+        else $task->status = 0;
 
         $task->save();
-
-        // Todo::where('updated_at', '<', Carbon::now()->subHours())->delete();
-
-        return Redirect::to('/');
+        return redirect()->to('/');
     }
 
     /**
@@ -99,12 +92,6 @@ class TodoController extends Controller
     public function destroy(Request $request, Todo $todo)
     {
         Todo::find($request->task_id)->delete();
-        return Redirect::to('/');
-    }
-
-    public function delete_completed_todos()
-    {
-        Todo::where('status', 1)->delete();
-        return response()->json(['message' => 'Success deleted completed todos']);
+        return redirect()->to('/');
     }
 }
