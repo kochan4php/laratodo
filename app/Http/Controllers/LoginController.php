@@ -8,37 +8,37 @@ use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
-    public function index()
-    {
-        return view('login.index', ['title' => 'Login']);
+  public function index()
+  {
+    return view('login.index', ['title' => 'Login']);
+  }
+
+  public function login_authenticate(Request $request)
+  {
+    $credentials = $request->validate([
+      'email' => ['required', 'email'],
+      'password' => ['required']
+    ]);
+
+    $remember_me = $request->has('remember-me') ? true : false;
+
+    if (Auth::attempt($credentials, $remember_me)) {
+      $request->session()->regenerate();
+
+      return Redirect::intended('/');
     }
 
-    public function login_authenticate(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required']
-        ]);
+    return back()->with('failed', 'Login Failed! Try Again.');
+  }
 
-        $remember_me = $request->has('remember-me') ? true : false;
+  public function logout(Request $request)
+  {
+    Auth::logout();
 
-        if (Auth::attempt($credentials, $remember_me)) {
-            $request->session()->regenerate();
+    $request->session()->invalidate();
 
-            return Redirect::intended('/');
-        }
+    $request->session()->regenerateToken();
 
-        return back()->with('failed', 'Login Failed! Try Again.');
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/login');
-    }
+    return Redirect::to('/login');
+  }
 }
