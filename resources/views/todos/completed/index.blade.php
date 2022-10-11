@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main', ['title' => 'Completed Tasks',])
 
 @section('navbar')
     @include('partials.navbar')

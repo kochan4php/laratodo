@@ -38,8 +38,8 @@ class User extends Authenticatable
     'email_verified_at' => 'datetime',
   ];
 
-  public function todos()
+  public function tasks()
   {
-    return $this->hasMany(Todo::class, 'user_id');
+    return $this->hasMany(Task::class, 'user_id');
   }
 }

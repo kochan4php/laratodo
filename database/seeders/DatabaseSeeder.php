@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Todo;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -22,9 +20,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Deo Subarno',
             'username' => 'deosubarno',
             'email' => 'aprodeosubarno@gmail.com',
-            'password' => Hash::make('deosbrn981')
+            'password' => bcrypt('deosbrn981'),
+            'slug' => 'deosubarno'
         ]);
-
-        Todo::factory(10)->create();
     }
 }

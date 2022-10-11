@@ -3,7 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\TodoController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Todos Route
-Route::resource('/tasks', TodoController::class)->except(['show', 'create', 'edit'])->middleware('auth');
-Route::controller(TodoController::class)->middleware('auth')->group(function () {
+Route::resource('/tasks', TaskController::class)->except(['show', 'create', 'edit'])->middleware('auth');
+Route::controller(TaskController::class)->middleware('auth')->group(function () {
   Route::get('/', 'index');
   Route::get('/completed', 'completed');
   Route::get('/uncompleted', 'uncompleted');
